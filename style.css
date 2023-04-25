@@ -1,0 +1,447 @@
+@font-face {
+  font-family: Brandon Grotesque;
+  src: url(font/brandon.otf);
+  font-family: Brandon light;
+  src: url(font/brandon-light.otf);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+/*----------------HOME------------------*/
+p {
+  font-size: 18px;
+  color: grey;
+  font-family: Brandon light;
+}
+
+.banner {
+  padding: 100px;
+  background: #21212e;
+  height: 100vh;
+  width: 100%;
+}
+
+.content {
+  float: left;
+  width: 40%;
+  padding-top: 100px;
+}
+.row {
+  align-items: center;
+}
+.images {
+  position: relative;
+}
+.images img {
+  position: absolute;
+
+  padding-left: 100px;
+}
+.btn {
+  width: 45%;
+}
+.content h2 {
+  color: #fff;
+  font-family: Brandon Grotesque;
+  font-size: 4em;
+  line-height: 80px;
+}
+/*----------------HEADER------------------*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  z-index: 100;
+  justify-content: space-between;
+
+  display: flex;
+  align-items: center;
+}
+header .logo {
+  color: white;
+  font-size: 30px;
+  font-family: Brandon Grotesque;
+  line-height: 35px;
+}
+header .menu {
+  display: flex;
+  position: relative;
+}
+header .menu li {
+  list-style: none;
+  margin-left: 30px;
+}
+header .menu li a {
+  text-decoration: none;
+  color: white;
+  font-family: Brandon light;
+}
+header .menu li a:hover {
+  color: #b9f3fc;
+  font-family: Brandon light;
+}
+header.sticky {
+  padding: 5px 100px;
+  background-color: #00a8ff;
+}
+
+/*----------------ABOUT------------------*/
+
+.about {
+  padding: 100px;
+  background: #21212e;
+  height: 100vh;
+  width: 100%;
+}
+.container h2 {
+  color: #fff;
+  font-size: 4em;
+  font-family: Brandon Grotesque;
+}
+.head {
+  float: left;
+  width: 50%;
+}
+
+.imagebox {
+  position: relative;
+}
+.imagebox img {
+  position: absolute;
+  height: auto;
+
+  padding-left: 100px;
+}
+.info {
+  margin-top: 20%;
+}
+.sec_head {
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+}
+.info p {
+  width: 53%;
+}
+
+/*----------------FEATURES------------------*/
+.features {
+  padding: 100px;
+  background: #21212e;
+
+  width: 100%;
+}
+
+.mood_features {
+  display: flex;
+  flex-direction: row;
+}
+.feature_info {
+  margin-top: 5%;
+  width: 40%;
+}
+h2 {
+  color: white;
+  font-size: 4em;
+  font-family: Brandon Grotesque;
+}
+button {
+  background-color: #46c2ff;
+  padding: 15px 25px;
+  border-style: none;
+  margin-top: 5%;
+  color: white;
+  border-radius: 7px;
+}
+.FeaturePart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Onecard {
+  width: 40%;
+  padding-left: 18%;
+}
+.card {
+  width: 300px;
+  background-color: #21212f;
+  border-radius: 5%;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  padding: 15px;
+  max-width: 300px;
+  height: auto;
+}
+.image_band {
+  padding: 5px;
+  width: 100%;
+}
+.image_band img {
+  height: 50%;
+  width: 100%;
+}
+.heading_card {
+  margin-top: 5%;
+}
+.heading_card p {
+  color: white;
+  font-size: 24px;
+}
+.card_info {
+  margin-top: 5%;
+}
+.card_info p {
+  font-size: 18px;
+}
+
+.twocards {
+  width: 30%;
+  padding-left: 5%;
+  flex-direction: column;
+}
+.first {
+  margin-top: 5%;
+}
+.second {
+  margin-top: 25%;
+}
+
+/*----------------REVIEW AND CONTACT------------------*/
+
+.Contact {
+  padding: 100px;
+  background: #21212e;
+  min-height: 100vh;
+  width: 100%;
+}
+.reviewCard {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  margin: 40px;
+  flex-wrap: wrap;
+}
+.reviewCard .artistCard {
+  position: relative;
+  margin: 20px;
+  width: 300px;
+  background-color: #21212f;
+  border-radius: 5%;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+.reviewCard .artistCard .reviewContent {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.artist {
+  color: #fff;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.subscribe {
+  background-color: #12121f;
+  width: 100%;
+  height: 100px;
+}
+
+.subscription {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.letter {
+  color: #fff;
+  margin: 30px;
+  font-family: Brandon Grotesque;
+}
+.white {
+  width: 550px;
+  height: 25px;
+  border-radius: 10px;
+  /* background-color: #fff; */
+  margin: 30px;
+}
+
+.subs_btn {
+  margin: 20px;
+}
+.Connect {
+  background-color: #21212f;
+  height: 150px;
+}
+.Connection {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.contactContent {
+  width: 25%;
+  padding: 10px;
+}
+
+.contactUs {
+  list-style: none;
+  color: grey;
+  margin-left: 15%;
+}
+.Us {
+  color: #fff;
+  margin-bottom: 8px;
+  font-family: Brandon light;
+}
+
+.social {
+  margin-left: 15%;
+  width: 25%;
+}
+.social-icons {
+  padding-right: 20px;
+  font-size: 20px;
+}
+
+/*----------------SHOWCASE------------------*/
+
+.Trending {
+  padding: 100px;
+  background: #21212e;
+  min-height: 100vh;
+  width: 100%;
+}
+.box {
+  position: absolute;
+  overflow: hidden;
+  display: flex;
+}
+
+.img_slider {
+  height: 600px;
+  padding: 20px;
+  align-items: center;
+}
+.img_slider img {
+  height: 50%;
+  object-fit: cover;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.img_slider img:hover {
+  filter: brightness(50%);
+}
+
+@media (max-width: 1100px) {
+  .images {
+    height: 500px;
+    padding: 50px;
+  }
+  .content h2 {
+    font-size: 3em;
+  }
+  .images img {
+    height: 50%;
+    object-fit: cover;
+    padding-left: 10px;
+  }
+  .head {
+    width: 60%;
+  }
+  .info {
+    margin-top: 10%;
+  }
+  .imagebox {
+    height: 500px;
+    padding: 50px;
+    width: 30%;
+  }
+  .imagebox img {
+    height: 100%;
+    object-fit: cover;
+    padding-left: 1px;
+  }
+  .img_slider {
+    height: 400px;
+    margin-top: 5%;
+  }
+  .FeaturePart {
+    align-items: center;
+    flex-direction: column;
+  }
+  .twocards {
+    padding: 20px;
+    width: 100%;
+  }
+  .first {
+    width: 50%;
+    float: left;
+    padding: 20px;
+    height: 325px;
+  }
+  .second {
+    float: right;
+    width: 50%;
+    margin-top: 5%;
+    height: 325px;
+  }
+}
+
+.welcome {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  color: white;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 1;
+  top: 0;
+  left: 0;
+}
+
+.welcome > div {
+  display: flex;
+  flex-direction: column;
+}
