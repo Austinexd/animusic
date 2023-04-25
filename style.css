@@ -4,9 +4,50 @@
   font-family: Brandon light;
   src: url(font/brandon-light.otf);
 }
+/* cursor */
 
+.cursor .cursor--small,
+.cursor .cursor--large,
+.cursor .cursor--text {
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: var(--cursor-size);
+  height: var(--cursor-size);
+  mix-blend-mode: difference;
+  pointer-events: none;
+  user-select: none;
+}
+
+.cursor .cursor--text {
+  --cursor-size: fit-content;
+  font-size: 0.75rem;
+  color: #fff;
+  opacity: 0;
+}
+
+.cursor .cursor--text .text {
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.cursor .cursor--small {
+  --cursor-size: 20px;
+  background: #fff;
+}
+
+.cursor .cursor--large {
+  --cursor-size: 60px;
+  border: 2px solid #fff;
+}
+
+/* end cursor */
 .welcome {
-  background-image: url(images/samplebackground.jpg);
+  background-image: url(images/pianobackground.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   position: absolute;
   height: 100vh;
   width: 100vw;
@@ -53,7 +94,8 @@
 }
 
 body {
-  overflow: hidden;
+  /* overflow: hidden; */
+  cursor: none;
 }
 /*----------------HOME------------------*/
 p {
@@ -390,6 +432,7 @@ button {
 
 .img_slider img:hover {
   filter: brightness(50%);
+  cursor: pointer;
 }
 
 @media (max-width: 1100px) {

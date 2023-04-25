@@ -47,7 +47,12 @@
               Offers a range of features that enhance your listening experience
               and bring you closer to the Anime music you love.
             </p>
-            <img class="btn app" src="images/App Store@2x.png" />
+            <img
+              class="btn app cursor-hover-item"
+              src="images/App Store@2x.png"
+              data-cursor-text="DOWNLOAD NOW!"
+              data-cursor-text-repeat="4"
+            />
             <img class="btn Play" src="images/Play Store@2x.png" />
           </div>
         </div>
@@ -260,15 +265,12 @@
     <section class="Connect">
       <div class="Connection">
         <div class="contactContent">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-            vel viverra ligula, id egestas ex.
-          </p>
+          <p>Copyright (c) 2023 Austinexd</p>
         </div>
         <div class="contactUs">
           <li class="Us">Contact Us</li>
           <li>123-456-7890</li>
-          <li>animusic.com</li>
+          <li>https://austinexd.github.io/animusic/</li>
         </div>
         <div class="social">
           <p class="Us">Social Media</p>
@@ -280,6 +282,14 @@
         </div>
       </div>
     </section>
+
+    <div class="cursor">
+      <div class="cursor--small"></div>
+      <div class="cursor--large"></div>
+      <div class="cursor--text">
+        <div class="text">GO HERE! GO HERE! GO HERE! GO HERE!</div>
+      </div>
+    </div>
 
     <script src="#"></script>
     <script type="text/javascript">
@@ -293,10 +303,140 @@
         music.play();
       }
 
-      window.addEventListener("scroll", function () {
-        const header = document.querySelector("header");
-        header.classList.toggle("sticky", window.scrollY > 0);
+      // window.addEventListener("scroll", function () {
+      //   const header = document.querySelector("header");
+      //   header.classList.toggle("sticky", window.scrollY > 0);
+      // });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js
+    "></script>
+    <script>
+      console.clear();
+
+      const { gsap, CircleType } = window;
+
+      const cursorOuter = document.querySelector(".cursor--large");
+      const cursorInner = document.querySelector(".cursor--small");
+      const cursorTextContainerEl = document.querySelector(".cursor--text");
+      const cursorTextEl = cursorTextContainerEl.querySelector(".text");
+
+      const hoverItems = document.querySelectorAll(".cursor-hover-item");
+      const hoverEffectDuration = 0.3;
+      let isHovered = false;
+      let initialCursorHeight;
+
+      const cursorRotationDuration = 8;
+
+      let circleType = new CircleType(cursorTextEl);
+      circleType.radius(50);
+
+      setTimeout(() => {
+        initialCursorHeight =
+          circleType.container.style.getPropertyValue("height");
+        console.log(initialCursorHeight);
+      }, 50);
+
+      hoverItems.forEach((item) => {
+        item.addEventListener("pointerenter", handlePointerEnter);
+        item.addEventListener("pointerleave", handlePointerLeave);
       });
+
+      let mouse = {
+        x: -100,
+        y: -100,
+      };
+
+      document.body.addEventListener("pointermove", updateCursorPosition);
+
+      function updateCursorPosition(e) {
+        console.log(e);
+        mouse.x = e.pageX;
+        mouse.y = e.screenY - 70;
+      }
+
+      function updateCursor() {
+        gsap.set([cursorInner, cursorTextContainerEl], {
+          x: mouse.x,
+          y: mouse.y,
+        });
+
+        gsap.to(cursorOuter, {
+          duration: 0.15,
+          x: mouse.x,
+          y: mouse.y,
+        });
+
+        if (!isHovered) {
+          gsap.to(cursorTextContainerEl, hoverEffectDuration * 0.5, {
+            opacity: 0,
+          });
+          gsap.set(cursorTextContainerEl, {
+            rotate: 0,
+          });
+        }
+
+        requestAnimationFrame(updateCursor);
+      }
+
+      updateCursor();
+
+      function handlePointerEnter(e) {
+        isHovered = true;
+
+        const target = e.currentTarget;
+        updateCursorText(target);
+
+        gsap.set([cursorTextContainerEl, cursorTextEl], {
+          height: initialCursorHeight,
+          width: initialCursorHeight,
+        });
+
+        gsap.fromTo(
+          cursorTextContainerEl,
+          {
+            rotate: 0,
+          },
+          {
+            duration: cursorRotationDuration,
+            rotate: 360,
+            ease: "none",
+            repeat: -1,
+          }
+        );
+
+        gsap.to(cursorInner, hoverEffectDuration, {
+          scale: 2,
+        });
+
+        gsap.fromTo(
+          cursorTextContainerEl,
+          hoverEffectDuration,
+          {
+            scale: 1.2,
+            opacity: 0,
+          },
+          {
+            delay: hoverEffectDuration * 0.75,
+            scale: 1,
+            opacity: 1,
+          }
+        );
+        gsap.to(cursorOuter, hoverEffectDuration, {
+          scale: 1.2,
+          opacity: 0,
+        });
+      }
+
+      function handlePointerLeave() {
+        isHovered = false;
+        gsap.to([cursorInner, cursorOuter], hoverEffectDuration, {
+          scale: 1,
+          opacity: 1,
+        });
+      }
     </script>
   </body>
 </html>
