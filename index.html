@@ -30,13 +30,26 @@
         <source src="./music/DeemoReflection.mp3" type="audio/mpeg" />
       </audio>
       <ul class="menu">
-        <li><a href="#banner">Home</a></li>
-        <li><a href="#about">About us</a></li>
+        <li>
+          <form id="form">
+            <input
+              type="text"
+              id="search"
+              placeholder="Enter artist or song name..."
+            />
+            <button>Search</button>
+          </form>
+        </li>
         <li><a href="#download">Download</a></li>
         <li><a href="#signUp">Sign Up</a></li>
         <li><a href="#logIn">Log In</a></li>
       </ul>
     </header>
+    <!-- anime song search results -->
+    <div id="result" class="container">
+      <p>Results will be displayed here</p>
+    </div>
+    <div id="more" class="container centered"></div>
     <!-------HOME-------------------->
     <section class="banner" id="banner">
       <div class="row">
@@ -201,7 +214,7 @@
     </section>
     <!-------CREATORS AND CONTACT-------------------->
     <section class="Contact" id="contact">
-      <h2>CREATORS</h2>
+      <h2>DEVELOPERS</h2>
       <div class="reviewCard">
         <div class="artistCard">
           <div class="reviewContent">
@@ -265,7 +278,7 @@
     <section class="Connect">
       <div class="Connection">
         <div class="contactContent">
-          <p>Copyright (c) 2023 Austinexd</p>
+          <p>Copyright (c) 2023 Animusic</p>
         </div>
         <div class="contactUs">
           <li class="Us">Contact Us</li>

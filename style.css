@@ -19,6 +19,7 @@
   mix-blend-mode: difference;
   pointer-events: none;
   user-select: none;
+  z-index: 100000;
 }
 
 .cursor .cursor--text {
@@ -45,10 +46,10 @@
 
 /* end cursor */
 .welcome {
-  background-image: url(images/pianobackground.png);
+  background-image: url(images/samplebackground.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  position: absolute;
+  position: fixed;
   height: 100vh;
   width: 100vw;
   background-color: black;
@@ -94,8 +95,36 @@
 }
 
 body {
-  /* overflow: hidden; */
+  overflow: hidden;
   cursor: none;
+}
+/* form for search bar */
+form {
+  position: relative;
+  width: 31.25rem;
+  max-width: 90%;
+}
+
+form input {
+  border: 0;
+  border-radius: 50px;
+  font-size: 15px;
+  padding: 1rem 2rem;
+  width: 80%;
+}
+form button {
+  background-color: var(--main-color);
+  color: rgba(255, 255, 255, 0.95);
+  position: absolute;
+  top: 0.125rem;
+  right: 0.125rem;
+  border: 0;
+  border-radius: 50px;
+  font-size: 1rem;
+  padding: 0.875rem 2rem;
+}
+form button:hover {
+  background-color: var(--secondary-color);
 }
 /*----------------HOME------------------*/
 p {
@@ -145,7 +174,7 @@ header {
   padding: 20px 100px;
   z-index: 100;
   justify-content: space-between;
-
+  background-color: #21212e;
   display: flex;
   align-items: center;
 }
@@ -174,7 +203,7 @@ header .menu li a:hover {
 }
 header.sticky {
   padding: 5px 100px;
-  background-color: #00a8ff;
+  background-color: #12121f;
 }
 
 /*----------------ABOUT------------------*/
@@ -432,7 +461,6 @@ button {
 
 .img_slider img:hover {
   filter: brightness(50%);
-  cursor: pointer;
 }
 
 @media (max-width: 1100px) {
