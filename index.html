@@ -9,6 +9,13 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -16,21 +23,24 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- End fonts -->
   </head>
   <body>
     <div class="welcome">
-      <div>
-        Welcome!
-        <button onclick="playBG()">Enter</button>
-      </div>
+      <div onclick="playBG()">Welcome!</div>
     </div>
     <header>
       <div class="logo">ANI<br />MUSIC<br /></div>
-      <audio id="backgroundmusic" controls autoplay loop hidden>
+      <audio id="backgroundmusic" controls loop hidden>
         <source src="./music/DeemoReflection.mp3" type="audio/mpeg" />
       </audio>
+      BGM ON/OFF
+      <label class="switch">
+        <input type="checkbox" checked onclick="togglePlay()" />
+        <span class="slider round"></span
+      ></label>
       <ul class="menu">
-        <li>
+        <li class="searchBar">
           <form id="form">
             <input
               type="text"
@@ -71,7 +81,7 @@
         </div>
         <div class="col">
           <div class="images">
-            <img src="images/rsz_pic.png" />
+            <img src="images/frontpic.png" />
           </div>
         </div>
       </div>
@@ -101,7 +111,7 @@
         </div>
 
         <div class="imagebox">
-          <img src="images/rsz_pic2.png" />
+          <img src="images/frontpic 2.png" />
         </div>
       </div>
     </section>
@@ -303,7 +313,7 @@
         <div class="text">GO HERE! GO HERE! GO HERE! GO HERE!</div>
       </div>
     </div>
-
+    <!-- backgroundmusic -->
     <script src="#"></script>
     <script type="text/javascript">
       function playBG() {
@@ -313,6 +323,10 @@
         body.style.overflowY = "scroll";
         welcome.style.transition = "2s";
         welcome.style.opacity = "0";
+
+        setTimeout(function () {
+          welcome.style.display = "none";
+        }, 2000);
         music.play();
       }
 
@@ -451,5 +465,20 @@
         });
       }
     </script>
+    <!-- toggle play/pause -->
+    <script>
+      let isPlaying = true;
+      function togglePlay() {
+        const music = document.getElementById("backgroundmusic");
+        if (isPlaying) {
+          music.pause();
+          isPlaying = false;
+        } else {
+          music.play();
+          isPlaying = true;
+        }
+      }
+    </script>
+    <!-- End toggle play/pause -->
   </body>
 </html>
