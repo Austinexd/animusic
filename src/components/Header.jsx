@@ -4,9 +4,8 @@ import { useRef, useState } from "react";
 import useComponentVisible from "../hooks/useComponentVisible";
 import axios from "axios";
 
-function Header() {
+function Header({ musicRef }) {
   const searchRef = useRef();
-  const musicRef = useRef();
   const [suggestions, setSuggestions] = useState([]);
   const [token, setToken] = useState("");
   const [bgPlay, setBgPlay] = useState(true);
