@@ -6,9 +6,10 @@ import axios from "axios";
 
 function Header() {
   const searchRef = useRef();
+  const musicRef = useRef();
   const [suggestions, setSuggestions] = useState([]);
   const [token, setToken] = useState("");
-
+  const [bgPlay, setBgPlay] = useState(true);
   const handleFetchMusic = async (e) => {
     e.preventDefault();
     console.log("pasok");
@@ -64,6 +65,14 @@ function Header() {
   const { ref, isComponentVisible, setIsComponentVisible } =
     useComponentVisible(false);
 
+  const handleToggleBg = () => {
+    if (bgPlay) {
+      musicRef.pause();
+    } else {
+      musicRef.play();
+    }
+  };
+
   return (
     <header>
       <div className="logo">
@@ -74,7 +83,11 @@ function Header() {
       </div>
       BGM ON/OFF
       <label className="switch">
-        <input type="checkbox" defaultChecked={true} />
+        <input
+          onChange={handleToggleBg}
+          type="checkbox"
+          defaultChecked={true}
+        />
         <span className="slider round"></span>
       </label>
       <ul className="menu">

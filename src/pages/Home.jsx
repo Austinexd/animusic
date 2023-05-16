@@ -1,10 +1,8 @@
-import Welcome from "../components/Welcome";
 import axios from "axios";
 
 function Home() {
   return (
     <>
-      <Welcome />
       <div id="result" className="container">
         <p>Results will be displayed here</p>
       </div>

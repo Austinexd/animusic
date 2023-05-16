@@ -1,7 +1,6 @@
 import { useRef } from "react";
 
-function Welcome() {
-  const bgMusicRef = useRef();
+function Welcome({ musicRef }) {
   const welcomeRef = useRef();
   const playBG = () => {
     const body = document.querySelector("body");
@@ -12,13 +11,13 @@ function Welcome() {
     setTimeout(function () {
       welcomeRef.current.style.display = "none";
     }, 2000);
-    bgMusicRef.current.play();
+    musicRef.current.play();
   };
 
   return (
     <div ref={welcomeRef} className="welcome">
       <audio
-        ref={bgMusicRef}
+        ref={musicRef}
         id="backgroundmusic"
         controls={true}
         loop={true}
