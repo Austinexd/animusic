@@ -16,19 +16,19 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "animusic/",
+        path: "/animusic",
         element: <Home />,
       },
       {
-        path: "animusic/about",
+        path: "/animusic/about",
         element: <About />,
       },
       {
-        path: "animusic/signup",
+        path: "/animusic/signup",
         element: <Signup />,
       },
       {
-        path: "animusic/login",
+        path: "/animusic/login",
         element: <Login />,
       },
     ],
