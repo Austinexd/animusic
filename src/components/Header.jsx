@@ -67,9 +67,9 @@ function Header() {
 
   const handleToggleBg = () => {
     if (bgPlay) {
-      musicRef.pause();
+      musicRef.current.pause();
     } else {
-      musicRef.play();
+      musicRef.current.play();
     }
   };
 
