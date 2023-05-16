@@ -1,0 +1,34 @@
+import { useRef } from "react";
+
+function Welcome() {
+  const bgMusicRef = useRef();
+  const welcomeRef = useRef();
+  const playBG = () => {
+    const body = document.querySelector("body");
+    body.style.overflowY = "scroll";
+    welcomeRef.current.style.transition = "2s";
+    welcomeRef.current.style.opacity = "0";
+
+    setTimeout(function () {
+      welcomeRef.current.style.display = "none";
+    }, 2000);
+    bgMusicRef.current.play();
+  };
+
+  return (
+    <div ref={welcomeRef} className="welcome">
+      <audio
+        ref={bgMusicRef}
+        id="backgroundmusic"
+        controls={true}
+        loop={true}
+        hidden={true}
+      >
+        <source src="./music/SparkleYourName.mp3" type="audio/mpeg" />
+      </audio>
+      <div onClick={playBG}>Welcome!</div>
+    </div>
+  );
+}
+
+export default Welcome;
