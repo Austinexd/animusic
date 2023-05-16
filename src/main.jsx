@@ -12,7 +12,7 @@ import Login from "./pages/Login.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/animusic",
     element: <App />,
     children: [
       {
@@ -37,7 +37,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <h1>hello</h1>
     <RouterProvider router={router} />
   </React.StrictMode>
 );
