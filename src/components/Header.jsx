@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { AiOutlineSearch } from "react-icons/Ai";
+import { AiOutlineSearch } from "react-icons/ai";
 import { useRef, useState } from "react";
 import useComponentVisible from "../hooks/useComponentVisible";
 import axios from "axios";
