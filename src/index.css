@@ -611,3 +611,7 @@ button {
   overflow: scroll;
   width: 100%;
 }
+/* fab icons */
+.fa-discord:before {
+  padding: 10px;
+}

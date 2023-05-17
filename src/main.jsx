@@ -5,10 +5,8 @@ import "./index.css";
 
 // ROUTER
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import About from "./pages/About.jsx";
+
 import Home from "./pages/Home.jsx";
-import Signup from "./pages/Signup.jsx";
-import Login from "./pages/Login.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,18 +16,6 @@ const router = createBrowserRouter([
       {
         path: "/animusic",
         element: <Home />,
-      },
-      {
-        path: "/animusic/about",
-        element: <About />,
-      },
-      {
-        path: "/animusic/signup",
-        element: <Signup />,
-      },
-      {
-        path: "/animusic/login",
-        element: <Login />,
       },
     ],
   },

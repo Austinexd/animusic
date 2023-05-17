@@ -82,22 +82,8 @@ function Header({ musicRef }) {
         MUSIC
         <br />
       </div>
-      BGM ON/OFF
-      <label className="switch">
-        <input
-          onChange={handleToggleBg}
-          type="checkbox"
-          defaultChecked={true}
-        />
-        <span className="slider round"></span>
-      </label>
+
       <ul className="menu">
-        <li>
-          <Link to="signup">Sign up</Link>
-        </li>
-        <li>
-          <Link to="login">Log In</Link>
-        </li>
         <li className="searchBar">
           <form id="form">
             <input
@@ -119,6 +105,14 @@ function Header({ musicRef }) {
           )}
         </li>
       </ul>
+      <label className="switch">
+        <input
+          onChange={handleToggleBg}
+          type="checkbox"
+          defaultChecked={true}
+        />
+        <span className="slider round"></span>
+      </label>
     </header>
   );
 }
