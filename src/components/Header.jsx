@@ -11,7 +11,6 @@ function Header({ musicRef }) {
   const [bgPlay, setBgPlay] = useState(true);
   const handleFetchMusic = async (e) => {
     e.preventDefault();
-    console.log("pasok");
     let accessToken = token;
     if (!accessToken) {
       const config = {
@@ -52,11 +51,7 @@ function Header({ musicRef }) {
       searchMusicConfig
     );
 
-    const completeSuggests = [
-      ...results.data.albums.items.map((item) => item.name),
-      ...results.data.artists.items.map((item) => item.name),
-      ...results.data.tracks.items.map((item) => item.name),
-    ];
+    const completeSuggests = [...results.data.tracks.items];
     setSuggestions(completeSuggests);
     setIsComponentVisible(true);
   };
@@ -72,6 +67,10 @@ function Header({ musicRef }) {
       musicRef.current.play();
       setBgPlay(true);
     }
+  };
+
+  const handleLinkClick = () => {
+    setIsComponentVisible(false);
   };
 
   return (
@@ -99,7 +98,15 @@ function Header({ musicRef }) {
           {isComponentVisible && suggestions.length > 0 && (
             <ul ref={ref} className="music-suggestions">
               {suggestions.map((suggestion) => (
-                <li>{suggestion}</li>
+                <li key={suggestion.name} onClick={handleLinkClick}>
+                  <Link
+                    state={suggestion}
+                    className="suggestion-link"
+                    to="/animusic/player"
+                  >
+                    {suggestion.name}
+                  </Link>
+                </li>
               ))}
             </ul>
           )}

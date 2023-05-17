@@ -3,9 +3,7 @@ import axios from "axios";
 function Home() {
   return (
     <>
-      <div id="result" className="container">
-        <p>Results will be displayed here</p>
-      </div>
+      <div id="result" className="container"></div>
       <div id="more" className="container centered"></div>
       <section className="banner" id="banner">
         <div className="row">

@@ -615,3 +615,23 @@ button {
 .fa-discord:before {
   padding: 10px;
 }
+
+.suggestion-link {
+  color: black !important;
+}
+
+.main-content {
+  padding: 100px;
+  padding-top: 200px;
+  min-height: 75vh;
+  background: #21212e;
+}
+
+.song-results {
+  padding-left: 300px;
+  color: white;
+}
+
+.spotify-link {
+  color: skyblue;
+}

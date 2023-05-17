@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
+import Player from "./pages/Player.jsx";
 import "./index.css";
 
 // ROUTER
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/animusic",
         element: <Home />,
+      },
+      {
+        path: "/animusic/player",
+        element: <Player />,
       },
     ],
   },

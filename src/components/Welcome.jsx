@@ -23,7 +23,7 @@ function Welcome({ musicRef }) {
         loop={true}
         hidden={true}
       >
-        <source src="./music/SparkleYourName.mp3" type="audio/mpeg" />
+        <source src="./music/ani music.mp3" type="audio/mpeg" />
       </audio>
       <div onClick={playBG}>Welcome!</div>
     </div>
